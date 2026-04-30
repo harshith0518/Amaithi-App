@@ -33,10 +33,16 @@
 * type ```npm run dev``` and then ```npm run dev``` to run the frontend locally
 * 
 
+# DataBase
+* For now we are just using the dockerized postgres database
+* To create this :
+  * ```docker run --name name_to_show -e POSTGRES_DB=db_name -e POSTGRES_USER=user_name -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres:15``` [note that we are building the continaer of the postgres DB through the postgres image present in the dockerhub]
+  * Note that all the required variables and included in the .env file of the project to run with the backend.
+  * **to open DB which is in the container**: ```docker exec -it name_to_show psql -U user_name -d db_name```
 
 # Next targets
 * Implement the authentication, pages and the frontend design tomorrow EOD.
-* Dockerize the whole thing together
+* use docker-compose for the llm image, backend and DB image.
 * implementing the agentic architecture through the LLM included
 
 
